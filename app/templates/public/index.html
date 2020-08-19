@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('site.static', filename='styles/style.css') }}">
+<div class="text-center">
+	<h3>That's me App</h3>
+	<p>
+		This web application let the user show their photos like instagram, but about your work.
+	</p>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="d-flex flex-wrap" id="images"></div>
+	</div>
+</div>
+<script src="{{url_for('site.static', filename='js/index.js')}}"></script>
+{% endblock %}
+
+el fuego: katerine neville
+grito de tierra: sara lark

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Admin - About {% endblock %}
+{% block body%}
+<script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert alert-primary" role="alert">
+				{{message}}
+			</div>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<h3>Modify your description</h3>
+<form action="/admin/about" method="post">
+	<!-- <input type="text" name="editor" id="editor" placeholder="Type your description here"> -->
+	{% if description is defined and description|length %}
+		<textarea name="editor" id="editor"  required>{{description}}</textarea>
+	{% else %}
+		<textarea name="editor" id="editor" placeholder="Say something about you here." required></textarea>
+	{% endif %}
+	
+		<input type="submit" value="Submit" class="btn btn-primary mt-2">
+</form>
+<script>
+	ClassicEditor
+		.create(document.querySelector('#editor'))
+		.catch(error => {
+			console.error(error);
+		});
+		
+</script>
+
+{% endblock%}

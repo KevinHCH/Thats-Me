@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Admin {% endblock %}
+{% block body %}
+<div class="card-deck">
+	<div class="card border-primary mb-3" style="max-width: 18rem;">
+		<div class="card-header">Modify</div>
+		<div class="card-body text-primary">
+			<h5 class="card-title">Modify About Me</h5>
+			<p class="card-text">This section will let you modify the About Me section</p>
+			<a href="/admin/about" class="btn btn-primary">Here</a>
+		</div>
+	</div>
+
+	<div class="card border-primary mb-3" style="max-width: 18rem;">
+		<div class="card-header">Add</div>
+		<div class="card-body text-primary">
+			<h5 class="card-title">Add images</h5>
+			<p class="card-text">This section will let you agregate some new images</p>
+			<a href="/admin/images" class="btn btn-primary">Here</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

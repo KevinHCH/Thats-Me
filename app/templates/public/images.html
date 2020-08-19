@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+<!-- Para que el base html pueda leer el archivo, es necesario pasarle el block content -->
+{% block title %} Images {% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('site.static', filename='styles/style.css') }}">
+<div class="images-container">
+{% for img in imgs: %}
+	<img src="{{url_for('static', filename=img['path'])}}" alt="{{img['name']}}" title="{{img['name']}}" loading="lazy" class="single-img">
+{% endfor %}
+</div>
+{% endblock %}
